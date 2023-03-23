@@ -1,0 +1,13 @@
+package cn.knightzz;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class WebsocketUploadApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
