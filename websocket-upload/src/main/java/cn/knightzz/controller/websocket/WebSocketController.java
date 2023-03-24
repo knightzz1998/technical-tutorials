@@ -10,6 +10,7 @@ import javax.websocket.OnOpen;
 import javax.websocket.Session;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
+import java.io.IOException;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -47,5 +48,17 @@ public class WebSocketController {
         log.debug("{} 连接成功!", userName);
         SESSION_ID_USERNAME.put(session.getId(), userName);
         USERNAME_SESSION.put(userName, session);
+    }
+
+    public void sendMessage(String message) {
+
+        USERNAME_SESSION.forEach((username, session) -> {
+            try {
+                session.getBasicRemote().sendText( "hello " + username);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
     }
 }
