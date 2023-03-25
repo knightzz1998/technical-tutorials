@@ -1,0 +1,22 @@
+server:
+  port: 9091
+# thymeleaf
+spring:
+  devtools:
+    restart:
+      enabled: true
+      additional-paths:
+        - src/main/java
+        - src/main/resources
+  thymeleaf:
+    cache: false
+  # Email
+  mail:
+    host: smtp.163.com
+    port: 25
+    username: 15565946702@163.com
+    # \u6388\u6743\u7801
+    password: RVDISFNSSNERSDOD
+    protocol: smtp
+    default-encoding: UTF-8
+
