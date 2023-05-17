@@ -26,7 +26,6 @@ public class KafkaTest {
 
     @Autowired
     private Consumer consumer;
-
     @Test
     public void testProducer() {
         producer.sendMessage("test", "你好");
