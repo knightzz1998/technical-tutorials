@@ -1,0 +1,39 @@
+server:
+  port: 9092
+  servlet:
+    context-path: /community
+
+# thymeleaf
+spring:
+  devtools:
+    restart:
+      enabled: true
+      additional-paths:
+        - src/main/java
+        - src/main/resources
+  thymeleaf:
+    cache: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/geek_zone?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+
+# MyBatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: cn.knightzz.community.entity
+  configuration:
+    # \u81EA\u52A8\u586B\u5145id
+    use-generated-keys: true
+    map-underscore-to-camel-case: true
+
+# community
+community:
+  path:
+    domain: http://localhost:9092
+    upload: d:/work/data/upload
+
+
+
